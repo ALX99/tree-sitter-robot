@@ -109,3 +109,40 @@ ${FOO} =    I am a very long text string
             (ellipses)
             (argument
               (text_chunk))))))))
+
+================================================================================
+Several different variables
+================================================================================
+
+*** Variables ***
+${first} =  This is a very interesting
+...         line
+@{second} =    And this is a
+...         list with three  items
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (variables_section
+      (section_header)
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text_chunk))
+          (continuation
+            (ellipses)
+            (argument
+              (text_chunk)))))
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text_chunk))
+          (continuation
+            (ellipses)
+            (argument
+              (text_chunk))
+            (argument
+              (text_chunk))))))))
