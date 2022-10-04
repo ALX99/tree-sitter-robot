@@ -60,3 +60,25 @@ Test extra data and comment after section header
       (extra_text)
       (extra_text)
       (comment))))
+
+================================================================================
+Arguments can start with curly braces
+================================================================================
+
+***Tasks***
+This is a task
+    [Documentation]    {abc
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (test_case_or_task_definition
+        (name)
+        (body
+          (test_case_or_task_setting
+            (arguments
+              (argument
+                (text_chunk)))))))))
