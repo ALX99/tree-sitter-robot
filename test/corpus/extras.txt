@@ -25,3 +25,23 @@ Documentation       I am just text, # not a comment   # But I am a comment
             (ellipses)
             (comment))))
       (comment))))
+
+================================================================================
+Test tab and space separator mix
+================================================================================
+
+*** Settings ***
+
+Documentation	 		   hi
+
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (settings_section
+      (section_header)
+      (setting_statement
+        (arguments
+          (argument
+            (text_chunk)))))))
