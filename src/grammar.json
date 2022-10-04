@@ -1771,12 +1771,66 @@
         }
       ]
     },
-    "scalar_variable": {
+    "text_chunk": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[^\\s#]"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": " "
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "[^\\s$@&]"
+                    }
+                  ]
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "PATTERN",
+                      "value": "[^\\s$@&{]"
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "[$@&][^{]"
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "[^$@&]\\{"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "variable_name": {
+      "type": "PATTERN",
+      "value": "[^{}]+"
+    },
+    "list_variable": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "${"
+          "value": "@{"
         },
         {
           "type": "CHOICE",
@@ -1812,12 +1866,12 @@
         }
       ]
     },
-    "list_variable": {
+    "scalar_variable": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "@{"
+          "value": "${"
         },
         {
           "type": "CHOICE",
@@ -1894,60 +1948,6 @@
         }
       ]
     },
-    "variable_name": {
-      "type": "PATTERN",
-      "value": "[^{}]+"
-    },
-    "text_chunk": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "PATTERN",
-            "value": "[^\\s#]"
-          },
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": " "
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[^\\s$@&]"
-                    }
-                  ]
-                },
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "PATTERN",
-                      "value": "[^\\s$@&{]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[$@&][^{]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "[^$@&]\\{"
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
     "comment": {
       "type": "TOKEN",
       "content": {
@@ -2015,8 +2015,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]+"
+              "type": "SYMBOL",
+              "name": "_whitespace"
             },
             {
               "type": "BLANK"

@@ -294,31 +294,8 @@ module.exports = grammar({
       ))
     ),
 
-    scalar_variable: $ => seq(
-      "${",
-      optional(" "),
-      $.variable_name,
-      optional(" "),
-      "}"
-    ),
 
-    list_variable: $ => seq(
-      "@{",
-      optional(" "),
-      $.variable_name,
-      optional(" "),
-      "}"
-    ),
 
-    dictionary_variable: $ => seq(
-      "&{",
-      optional(" "),
-      $.variable_name,
-      optional(" "),
-      "}"
-    ),
-
-    variable_name: $ => /[^{}]+/,
 
     text_chunk: $ => token(seq(
       /[^\s#]/, // Can't begin with whitespace or start of comment
@@ -333,14 +310,17 @@ module.exports = grammar({
       )),
     )),
 
+    variable_name: $ => /[^{}]+/,
+
+    list_variable: $ => seq("@{", optional(" "), $.variable_name, optional(" "), "}"),
+    scalar_variable: $ => seq("${", optional(" "), $.variable_name, optional(" "), "}"),
+    dictionary_variable: $ => seq("&{", optional(" "), $.variable_name, optional(" "), "}"),
+
     comment: $ => token(seq(optional(/[ \t]+/), "#", /[^\n]+/)),
 
     _separator: $ => token(seq(/[ ]{2}|\t/, optional(/[ \t]+/))),
-
     _whitespace: $ => /[ \t]+/,
-
     _line_break: $ => /\r\n|\r|\n/,
-
-    _empty_line: $ => seq(optional(/[ \t]+/), $._line_break),
+    _empty_line: $ => seq(optional($._whitespace), $._line_break),
   },
 });
