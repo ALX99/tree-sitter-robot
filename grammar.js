@@ -77,7 +77,7 @@ module.exports = grammar({
       $.settings_section,
       $.variables_section,
       $.keywords_section,
-      $.test_cases_section,
+      $.test_cases_or_tasks_section,
     ),
 
     //
@@ -159,14 +159,17 @@ module.exports = grammar({
     // Test cases / Tasks section
     //
 
-    test_cases_section: $ => seq(
-      section_header($, "Test Cases"),
+    test_cases_or_tasks_section: $ => seq(
+      choice(
+        section_header($, "Test Cases"),
+        section_header($, "Tasks"),
+      ),
       repeat(choice(
-        $.test_case_definition,
+        $.test_case_or_task_definition,
         $._empty_line,
       )),
     ),
-    test_case_definition: $ => seq(
+    test_case_or_task_definition: $ => seq(
       alias($.text_chunk, $.name),
       choice(
         // Data-driven tests have arguments
@@ -178,19 +181,19 @@ module.exports = grammar({
         // Regular tests have bodies
         seq(
           $._line_break,
-          alias($.test_case_definition_body, $.body),
+          alias($.test_case_or_task_definition_body, $.body),
         )
       )
     ),
-    test_case_definition_body: $ => prec.right(repeat1(
+    test_case_or_task_definition_body: $ => prec.right(repeat1(
       choice(
-        $.test_case_setting,
+        $.test_case_or_task_setting,
         $.statement,
         $._empty_line,
       )
     )),
     // Ref: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#test-case-section
-    test_case_setting: $ => seq(
+    test_case_or_task_setting: $ => seq(
       $._separator,
       choice(
         setting("Documentation"),

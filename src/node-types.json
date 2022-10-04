@@ -62,7 +62,7 @@
           "named": true
         },
         {
-          "type": "test_case_setting",
+          "type": "test_case_or_task_setting",
           "named": true
         }
       ]
@@ -225,7 +225,7 @@
           "named": true
         },
         {
-          "type": "test_cases_section",
+          "type": "test_cases_or_tasks_section",
           "named": true
         },
         {
@@ -308,7 +308,7 @@
     }
   },
   {
-    "type": "test_case_definition",
+    "type": "test_case_or_task_definition",
     "named": true,
     "fields": {},
     "children": {
@@ -331,7 +331,7 @@
     }
   },
   {
-    "type": "test_case_setting",
+    "type": "test_case_or_task_setting",
     "named": true,
     "fields": {},
     "children": {
@@ -346,7 +346,7 @@
     }
   },
   {
-    "type": "test_cases_section",
+    "type": "test_cases_or_tasks_section",
     "named": true,
     "fields": {},
     "children": {
@@ -362,7 +362,7 @@
           "named": true
         },
         {
-          "type": "test_case_definition",
+          "type": "test_case_or_task_definition",
           "named": true
         }
       ]

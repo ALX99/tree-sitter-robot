@@ -14,9 +14,9 @@ Test That Something Works
 
 (source_file
   (section
-    (test_cases_section
+    (test_cases_or_tasks_section
       (section_header)
-      (test_case_definition
+      (test_case_or_task_definition
         (name)
         (body
           (statement
@@ -25,6 +25,31 @@ Test That Something Works
           (statement
             (keyword_invocation
               (keyword)))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk))))))))))
+
+================================================================================
+Simple tasks
+================================================================================
+
+*** Tasks ***
+
+Hello
+    Log    今日は
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (test_case_or_task_definition
+        (name)
+        (body
           (statement
             (keyword_invocation
               (keyword)
@@ -48,10 +73,10 @@ Empty User Name and Password      ${EMPTY}         ${EMPTY}
 
 (source_file
   (section
-    (test_cases_section
+    (test_cases_or_tasks_section
       (section_header)
       (extra_text)
-      (test_case_definition
+      (test_case_or_task_definition
         (name)
         (arguments
           (argument
@@ -59,7 +84,7 @@ Empty User Name and Password      ${EMPTY}         ${EMPTY}
           (argument
             (scalar_variable
               (variable_name)))))
-      (test_case_definition
+      (test_case_or_task_definition
         (name)
         (arguments
           (argument
@@ -67,14 +92,14 @@ Empty User Name and Password      ${EMPTY}         ${EMPTY}
               (variable_name)))
           (argument
             (text_chunk))))
-      (test_case_definition
+      (test_case_or_task_definition
         (name)
         (arguments
           (argument
             (text_chunk))
           (argument
             (text_chunk))))
-      (test_case_definition
+      (test_case_or_task_definition
         (name)
         (arguments
           (argument
@@ -83,7 +108,7 @@ Empty User Name and Password      ${EMPTY}         ${EMPTY}
           (argument
             (scalar_variable
               (variable_name)))))
-      (test_case_definition
+      (test_case_or_task_definition
         (name)
         (arguments
           (argument
@@ -92,7 +117,7 @@ Empty User Name and Password      ${EMPTY}         ${EMPTY}
           (argument
             (scalar_variable
               (variable_name)))))
-      (test_case_definition
+      (test_case_or_task_definition
         (name)
         (arguments
           (argument
@@ -124,12 +149,12 @@ Test That Something Works
 
 (source_file
   (section
-    (test_cases_section
+    (test_cases_or_tasks_section
       (section_header)
-      (test_case_definition
+      (test_case_or_task_definition
         (name)
         (body
-          (test_case_setting
+          (test_case_or_task_setting
             (arguments
               (argument
                 (text_chunk))
@@ -139,19 +164,19 @@ Test That Something Works
                 (ellipses)
                 (argument
                   (text_chunk)))))
-          (test_case_setting
+          (test_case_or_task_setting
             (arguments
               (argument
                 (text_chunk))
               (argument
                 (text_chunk))))
-          (test_case_setting
+          (test_case_or_task_setting
             (arguments
               (argument
                 (text_chunk))
               (argument
                 (text_chunk))))
-          (test_case_setting
+          (test_case_or_task_setting
             (arguments
               (argument
                 (text_chunk))
@@ -159,11 +184,11 @@ Test That Something Works
                 (text_chunk))
               (argument
                 (text_chunk))))
-          (test_case_setting
+          (test_case_or_task_setting
             (arguments
               (argument
                 (text_chunk))))
-          (test_case_setting
+          (test_case_or_task_setting
             (arguments
               (argument
                 (text_chunk))))
