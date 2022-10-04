@@ -323,23 +323,15 @@ module.exports = grammar({
     variable_name: $ => /[^{}]+/,
 
     text_chunk: $ => token(seq(
-      choice(
-        /[^\s$@&#]/,   // Can't start with a #, since that would be a comment
-        /[$@&][^{]/,
-        /[^$@&]\{/,
-      ),
-      repeat(choice(
-        /[^\s$@&{]/,
-        /[$@&][^{]/,
-        /[^$@&]\{/,
-      )),
-      repeat(seq(
-        " ",
-        repeat1(choice(
+      /[^\s#]/, // Can't begin with whitespace or start of comment
+
+      repeat(choice( // Repeat while it does not look like the beginning of a variable
+        seq(" ", /[^\s$@&]/),
+        choice( 
           /[^\s$@&{]/,
           /[$@&][^{]/,
           /[^$@&]\{/,
-        )),
+        ),
       )),
     )),
 

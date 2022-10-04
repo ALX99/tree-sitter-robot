@@ -127,7 +127,7 @@ Scalar variable interpolation
 Test Keyword
   Simple Statement    ${SOME_VARIABLE}
 
-  Simple Statement    Interpolation ${VARIABLE} example
+  Simple Statement    Interpolation ${a} b ${c} ${1}
 
   Simple Statement    no${VARIABLE}space
 
@@ -155,7 +155,11 @@ Test Keyword
                   (text_chunk)
                   (scalar_variable
                     (variable_name))
-                  (text_chunk)))))
+                      (text_chunk)
+                      (scalar_variable
+                        (variable_name))
+                      (scalar_variable
+                        (variable_name))))))
           (statement
             (keyword_invocation
               (keyword)
