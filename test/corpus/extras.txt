@@ -15,7 +15,7 @@ Documentation       I am just text, # not a comment   # But I am a comment
   (section
     (settings_section
       (section_header)
-      (extra_text)
+      (comment)
       (setting_statement
         (arguments
           (argument
@@ -34,7 +34,6 @@ Test tab and space separator mix
 
 Documentation	 		   hi
 
-
 --------------------------------------------------------------------------------
 
 (source_file
@@ -45,3 +44,19 @@ Documentation	 		   hi
         (arguments
           (argument
             (text_chunk)))))))
+
+================================================================================
+Test extra data and comment after section header
+================================================================================
+
+*** Test Cases ***  Extra data    # Comment
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (extra_text)
+      (extra_text)
+      (comment))))

@@ -76,6 +76,7 @@ Empty User Name and Password      ${EMPTY}         ${EMPTY}
     (test_cases_or_tasks_section
       (section_header)
       (extra_text)
+      (extra_text)
       (test_case_or_task_definition
         (name)
         (arguments

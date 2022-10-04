@@ -48,7 +48,7 @@ function section_header($, name) {
       ),
       $.section_header
     ),
-    optional(alias(/[^\r\n]+/, $.extra_text)),
+    optional(seq($._separator, alias(seq(/[^#]/, optional(/[^#\r\n]+/)), $.extra_text))),
     $._line_break,
   )
 }
