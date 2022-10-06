@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hubro/tree-sitter-robot.git"
+    "url": "git+https://github.com/ALX99/tree-sitter-robot.git"
   },
   "keywords": [
     "tree-sitter",
@@ -18,9 +18,9 @@
   "author": "Tomas Sandven",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hubro/tree-sitter-robot/issues"
+    "url": "https://github.com/ALX99/tree-sitter-robot/issues"
   },
-  "homepage": "https://github.com/Hubro/tree-sitter-robot#readme",
+  "homepage": "https://github.com/ALX99/tree-sitter-robot#readme",
   "dependencies": {
     "nan": "^2.15.0"
   },
