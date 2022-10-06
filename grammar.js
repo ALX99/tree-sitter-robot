@@ -168,7 +168,8 @@ module.exports = grammar({
       )),
     ),
     test_case_or_task_definition: $ => seq(
-      alias($.text_chunk, $.name),
+      optional(" "),
+      alias($.test_case_or_task, $.name),
       choice(
         // Data-driven tests have arguments
         seq(
@@ -178,7 +179,7 @@ module.exports = grammar({
 
         // Regular tests have bodies
         seq(
-          $._line_break,
+          $._empty_line,
           alias($.test_case_or_task_definition_body, $.body),
         )
       )
@@ -296,6 +297,14 @@ module.exports = grammar({
 
 
 
+    // todo variables can exist inside of these
+    test_case_or_task: $ => token(seq(
+      /[^ #]/, // Can't begin with whitespace or start of comment
+      repeat1(choice(
+        /[ ][^\s]/,
+        /[^\s]/,
+      )),
+    )),
 
     text_chunk: $ => token(seq(
       /[^\s#]/, // Can't begin with whitespace or start of comment

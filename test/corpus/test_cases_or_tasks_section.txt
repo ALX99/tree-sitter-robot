@@ -199,3 +199,96 @@ Test That Something Works
               (arguments
                 (argument
                   (text_chunk))))))))))
+
+================================================================================
+Simple test case with spaces
+================================================================================
+
+*** Test cases ***
+
+ Test That Something Works 
+    Do Something
+    Then Do Something Else
+
+    Expect Result To Be     foo
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (test_case_or_task_definition
+        (name)
+        (body
+          (statement
+            (keyword_invocation
+              (keyword)))
+          (statement
+            (keyword_invocation
+              (keyword)))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk))))))))))
+
+================================================================================
+Test Templates with arguments on the same line
+================================================================================
+
+*** Settings ***
+Test Template    Example keyword
+
+*** Keywords ***
+Example Keyword
+  [Arguments]  ${name}
+  Log To Console    hi ${name}
+
+*** Test Cases ***
+Greet a guy  alex
+Greet a girl  eve
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (settings_section
+      (section_header)
+      (setting_statement
+        (arguments
+          (argument
+            (text_chunk))))))
+  (section
+    (keywords_section
+      (section_header)
+      (keyword_definition
+        (name)
+        (body
+          (keyword_setting
+            (arguments
+              (argument
+                (scalar_variable
+                  (variable_name)))))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk)
+                  (scalar_variable
+                    (variable_name))))))))))
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (test_case_or_task_definition
+        (name)
+        (arguments
+          (argument
+            (text_chunk))))
+      (test_case_or_task_definition
+        (name)
+        (arguments
+          (argument
+            (text_chunk)))))))
