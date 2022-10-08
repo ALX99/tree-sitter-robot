@@ -281,13 +281,16 @@ module.exports = grammar({
       "..."
     )),
 
-    argument: $ => repeat1(seq(
-      choice(
-        $.text,
-        $.variable,
-      ),
-      optional(" "),
-    )),
+    argument: $ => repeat1(
+      prec(1,
+        prec.right(
+          seq(
+            choice($.text, $.variable),
+            optional(" "),
+          )
+        )
+      )
+    ),
 
     // TODO variables can exist inside of these
     // TODO they are not allowed to begin with ^\*, but they can with ^ \*
@@ -300,21 +303,19 @@ module.exports = grammar({
     )),
 
 
+    // TODO, does not work to start keyword with ${}
     keyword: $ => seq(
-      /[^\s#]/, // Can't begin with whitespace or start of comment
+      /[^\s]/, // Can't begin with whitespace
       repeat1(choice(
         /[ ][^\s$@&]/,
         /[^\s$@&]/,
         /[$@&][^{]/,
-        seq(optional(" "), $.variable),
+        seq(optional(" "), alias($.variable, $.argument)), // alias to argument since it will be an argument to a keyword
       )),
     ),
 
     text: $ => prec.right(seq(
-      choice(
-        /[^\s$@&]/,
-        /[$@&][^{]/,
-      ),
+      // Try to figure out if it is the beginning of a variable
       repeat1(choice(
         /[ ][^\s$@&]/,
         /[^\s$@&]/,

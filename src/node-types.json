@@ -8,6 +8,22 @@
       "required": true,
       "types": [
         {
+          "type": "dictionary_variable",
+          "named": true
+        },
+        {
+          "type": "empty_variable",
+          "named": true
+        },
+        {
+          "type": "list_variable",
+          "named": true
+        },
+        {
+          "type": "scalar_variable",
+          "named": true
+        },
+        {
           "type": "text",
           "named": true
         },
@@ -118,7 +134,7 @@
       "required": false,
       "types": [
         {
-          "type": "variable",
+          "type": "argument",
           "named": true
         }
       ]
@@ -224,7 +240,7 @@
       "required": false,
       "types": [
         {
-          "type": "variable",
+          "type": "argument",
           "named": true
         }
       ]

@@ -1729,34 +1729,42 @@
     "argument": {
       "type": "REPEAT1",
       "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "CHOICE",
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PREC_RIGHT",
+          "value": 0,
+          "content": {
+            "type": "SEQ",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "text"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "text"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "variable"
+                  }
+                ]
               },
               {
-                "type": "SYMBOL",
-                "name": "variable"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": " "
-              },
-              {
-                "type": "BLANK"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": " "
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
               }
             ]
           }
-        ]
+        }
       }
     },
     "test_case_or_task": {
@@ -1792,7 +1800,7 @@
       "members": [
         {
           "type": "PATTERN",
-          "value": "[^\\s#]"
+          "value": "[^\\s]"
         },
         {
           "type": "REPEAT1",
@@ -1827,8 +1835,13 @@
                     ]
                   },
                   {
-                    "type": "SYMBOL",
-                    "name": "variable"
+                    "type": "ALIAS",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "variable"
+                    },
+                    "named": true,
+                    "value": "argument"
                   }
                 ]
               }
@@ -1843,19 +1856,6 @@
       "content": {
         "type": "SEQ",
         "members": [
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "PATTERN",
-                "value": "[^\\s$@&]"
-              },
-              {
-                "type": "PATTERN",
-                "value": "[$@&][^{]"
-              }
-            ]
-          },
           {
             "type": "REPEAT1",
             "content": {

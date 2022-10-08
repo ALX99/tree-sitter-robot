@@ -193,10 +193,10 @@ Print ${ msg} to console
           (statement
             (keyword_invocation
               (keyword
-                (variable
+                (argument
                   (scalar_variable
                     (variable_name)))
-                (variable
+                (argument
                   (scalar_variable
                     (variable_name))))))))))
   (section
@@ -204,7 +204,7 @@ Print ${ msg} to console
       (section_header)
       (keyword_definition
         (name
-          (variable
+          (argument
             (scalar_variable
               (variable_name))))
         (body
