@@ -122,6 +122,33 @@
     }
   },
   {
+    "type": "keyword",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "dictionary_variable",
+          "named": true
+        },
+        {
+          "type": "empty_variable",
+          "named": true
+        },
+        {
+          "type": "list_variable",
+          "named": true
+        },
+        {
+          "type": "scalar_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "keyword_definition",
     "named": true,
     "fields": {},
@@ -207,6 +234,33 @@
       "types": [
         {
           "type": "variable_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "dictionary_variable",
+          "named": true
+        },
+        {
+          "type": "empty_variable",
+          "named": true
+        },
+        {
+          "type": "list_variable",
+          "named": true
+        },
+        {
+          "type": "scalar_variable",
           "named": true
         }
       ]
@@ -505,14 +559,6 @@
   },
   {
     "type": "extra_text",
-    "named": true
-  },
-  {
-    "type": "keyword",
-    "named": true
-  },
-  {
-    "type": "name",
     "named": true
   },
   {

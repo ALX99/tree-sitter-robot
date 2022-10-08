@@ -563,7 +563,7 @@
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "text_chunk"
+            "name": "keyword"
           },
           "named": true,
           "value": "name"
@@ -1588,13 +1588,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "text_chunk"
-          },
-          "named": true,
-          "value": "keyword"
+          "type": "SYMBOL",
+          "name": "keyword"
         },
         {
           "type": "CHOICE",
@@ -1829,6 +1824,119 @@
           }
         ]
       }
+    },
+    "keyword": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[^\\s#]"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[ ][^\\s$@&]"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[^\\s$@&]"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[$@&][^{]"
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": " "
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "scalar_variable"
+                  }
+                ]
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": " "
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "list_variable"
+                  }
+                ]
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": " "
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "dictionary_variable"
+                  }
+                ]
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": " "
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "empty_variable"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
     },
     "text_chunk": {
       "type": "TOKEN",

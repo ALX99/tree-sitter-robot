@@ -145,3 +145,66 @@ I Am A User Defined Keyword
               (arguments
                 (argument
                   (text_chunk))))))))))
+
+================================================================================
+Simple Keyword with embedded argument
+================================================================================
+
+*** Variables ***
+${今日は}  Hello
+${world}  世界
+*** Test Cases ***
+Test printing
+  Print hello to console
+  Print ${今日は} ${world} to console
+*** Keywords ***
+Print ${ msg} to console
+  Log To Console    ${msg}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (variables_section
+      (section_header)
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text_chunk))))
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text_chunk))))))
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (test_case_or_task_definition
+        (name)
+        (body
+          (statement
+            (keyword_invocation
+              (keyword)))
+          (statement
+            (keyword_invocation
+              (keyword
+                (scalar_variable
+                  (variable_name))
+                (scalar_variable
+                  (variable_name)))))))))
+  (section
+    (keywords_section
+      (section_header)
+      (keyword_definition
+        (name
+          (scalar_variable
+            (variable_name)))
+        (body
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (scalar_variable
+                    (variable_name)))))))))))

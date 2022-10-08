@@ -128,7 +128,7 @@ module.exports = grammar({
     ),
     keyword_definition: $ => seq(
       optional(" "),
-      alias($.text_chunk, $.name),
+      alias($.keyword, $.name),
       $._line_break,
       alias($.keyword_definition_body, $.body),
     ),
@@ -238,7 +238,7 @@ module.exports = grammar({
     ),
 
     keyword_invocation: $ => seq(
-      alias($.text_chunk, $.keyword),
+      $.keyword,
       choice(
         seq(
           $._separator,
@@ -308,6 +308,19 @@ module.exports = grammar({
         /[^\s]/,
       )),
     )),
+
+    keyword: $ => seq(
+      /[^\s#]/, // Can't begin with whitespace or start of comment
+      repeat1(choice(
+        /[ ][^\s$@&]/,
+        /[^\s$@&]/,
+        /[$@&][^{]/,
+        seq(optional(" "), $.scalar_variable),
+        seq(optional(" "), $.list_variable),
+        seq(optional(" "), $.dictionary_variable),
+        seq(optional(" "), $.empty_variable),
+      )),
+    ),
 
     text_chunk: $ => token(seq(
       /[^\s#]/, // Can't begin with whitespace or start of comment
