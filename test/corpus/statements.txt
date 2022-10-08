@@ -152,23 +152,21 @@ Test Keyword
               (keyword)
               (arguments
                 (argument
-                  (text_chunk)
-                  (scalar_variable
-                    (variable_name))
-                      (text_chunk)
-                      (scalar_variable
-                        (variable_name))
-                      (scalar_variable
-                        (variable_name))))))
+                  (text_chunk
+                    (scalar_variable
+                      (variable_name))
+                    (scalar_variable
+                      (variable_name))
+                    (scalar_variable
+                      (variable_name)))))))
           (statement
             (keyword_invocation
               (keyword)
               (arguments
                 (argument
-                  (text_chunk)
-                  (scalar_variable
-                    (variable_name))
-                  (text_chunk))))))))))
+                  (text_chunk
+                    (scalar_variable
+                      (variable_name))))))))))))
 
 ================================================================================
 Simple variable assignment
@@ -300,10 +298,9 @@ Print And Return
             (return_statement
               (arguments
                 (argument
-                  (text_chunk)
-                  (scalar_variable
-                    (variable_name))
-                  (text_chunk)))))
+                  (text_chunk
+                    (scalar_variable
+                      (variable_name)))))))
           (statement
             (keyword_invocation
               (keyword)

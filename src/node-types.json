@@ -461,6 +461,33 @@
     }
   },
   {
+    "type": "text_chunk",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "dictionary_variable",
+          "named": true
+        },
+        {
+          "type": "empty_variable",
+          "named": true
+        },
+        {
+          "type": "list_variable",
+          "named": true
+        },
+        {
+          "type": "scalar_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variable_assignment",
     "named": true,
     "fields": {},
@@ -563,10 +590,6 @@
   },
   {
     "type": "section_header",
-    "named": true
-  },
-  {
-    "type": "text_chunk",
     "named": true
   },
   {

@@ -252,7 +252,7 @@ module.exports = grammar({
     // Reusable rules
     //
 
-    arguments: $ => prec.right(seq(
+    arguments: $ => seq(
       $.argument,
       repeat(seq(
         $._separator,
@@ -260,7 +260,7 @@ module.exports = grammar({
       )),
       $._line_break,
       repeat($.continuation),
-    )),
+    ),
 
     continuation: $ => seq(
       choice(
@@ -309,6 +309,7 @@ module.exports = grammar({
       )),
     )),
 
+
     keyword: $ => seq(
       /[^\s#]/, // Can't begin with whitespace or start of comment
       repeat1(choice(
@@ -322,18 +323,20 @@ module.exports = grammar({
       )),
     ),
 
-    text_chunk: $ => token(seq(
-      /[^\s#]/, // Can't begin with whitespace or start of comment
-
-      repeat(choice( // Repeat while it does not look like the beginning of a variable
-        seq(" ", /[^\s$@&]/),
-        choice( 
-          /[^\s$@&{]/,
-          /[$@&][^{]/,
-          /[^$@&]\{/,
-        ),
-      )),
-    )),
+    text_chunk: $ => prec.right(seq(
+      choice(
+        /[^\s$@&]/,
+        /[$@&][^{]/,
+      ),
+      repeat1(choice(
+        /[ ][^\s$@&]/,
+        /[^\s$@&]/,
+        /[$@&][^{]/,
+        seq(optional(" "), $.scalar_variable),
+        seq(optional(" "), $.list_variable),
+        seq(optional(" "), $.dictionary_variable),
+        seq(optional(" "), $.empty_variable),
+    )))),
 
 
     return_statement: $ => seq(
