@@ -109,14 +109,17 @@ Test Keyword
               (keyword)
               (arguments
                 (argument
-                  (scalar_variable
-                    (variable_name)))
+                  (variable
+                    (scalar_variable
+                      (variable_name))))
                 (argument
-                  (list_variable
-                    (variable_name)))
+                  (variable
+                    (list_variable
+                      (variable_name))))
                 (argument
-                  (dictionary_variable
-                    (variable_name)))))))))))
+                  (variable
+                    (dictionary_variable
+                      (variable_name))))))))))))
 
 ================================================================================
 Scalar variable interpolation
@@ -145,18 +148,7 @@ Test Keyword
               (keyword)
               (arguments
                 (argument
-                  (scalar_variable
-                    (variable_name))))))
-          (statement
-            (keyword_invocation
-              (keyword)
-              (arguments
-                (argument
-                  (text
-                    (scalar_variable
-                      (variable_name))
-                    (scalar_variable
-                      (variable_name))
+                  (variable
                     (scalar_variable
                       (variable_name)))))))
           (statement
@@ -165,8 +157,24 @@ Test Keyword
               (arguments
                 (argument
                   (text
-                    (scalar_variable
-                      (variable_name))))))))))))
+                    (variable
+                      (scalar_variable
+                        (variable_name)))
+                    (variable
+                      (scalar_variable
+                        (variable_name)))
+                    (variable
+                      (scalar_variable
+                        (variable_name))))))))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text
+                    (variable
+                      (scalar_variable
+                        (variable_name)))))))))))))
 
 ================================================================================
 Simple variable assignment
@@ -196,8 +204,9 @@ Test Keyword
                 (argument
                   (text))
                 (argument
-                  (scalar_variable
-                    (variable_name))))))
+                  (variable
+                    (scalar_variable
+                      (variable_name)))))))
           (statement
             (variable_assignment
               (variable_name)
@@ -262,15 +271,17 @@ Print And Return
           (keyword_setting
             (arguments
               (argument
-                (scalar_variable
-                  (variable_name)))))
+                (variable
+                  (scalar_variable
+                    (variable_name))))))
           (statement
             (keyword_invocation
               (keyword)
               (arguments
                 (argument
-                  (scalar_variable
-                    (variable_name))))))
+                  (variable
+                    (scalar_variable
+                      (variable_name)))))))
           (statement
             (return_statement))
           (statement
@@ -285,22 +296,25 @@ Print And Return
           (keyword_setting
             (arguments
               (argument
-                (scalar_variable
-                  (variable_name)))))
+                (variable
+                  (scalar_variable
+                    (variable_name))))))
           (statement
             (keyword_invocation
               (keyword)
               (arguments
                 (argument
-                  (scalar_variable
-                    (variable_name))))))
+                  (variable
+                    (scalar_variable
+                      (variable_name)))))))
           (statement
             (return_statement
               (arguments
                 (argument
                   (text
-                    (scalar_variable
-                      (variable_name)))))))
+                    (variable
+                      (scalar_variable
+                        (variable_name))))))))
           (statement
             (keyword_invocation
               (keyword)

@@ -281,23 +281,13 @@ module.exports = grammar({
       "..."
     )),
 
-    argument: $ => seq(
+    argument: $ => repeat1(seq(
       choice(
         $.text,
-        $.scalar_variable,
-        $.list_variable,
-        $.dictionary_variable,
-        $.empty_variable,
+        $.variable,
       ),
-      repeat(seq(
-        optional(" "),
-        choice(
-          $.text,
-          $.scalar_variable,
-          $.empty_variable,
-        )
-      ))
-    ),
+      optional(" "),
+    )),
 
     // TODO variables can exist inside of these
     // TODO they are not allowed to begin with ^\*, but they can with ^ \*
@@ -316,10 +306,7 @@ module.exports = grammar({
         /[ ][^\s$@&]/,
         /[^\s$@&]/,
         /[$@&][^{]/,
-        seq(optional(" "), $.scalar_variable),
-        seq(optional(" "), $.list_variable),
-        seq(optional(" "), $.dictionary_variable),
-        seq(optional(" "), $.empty_variable),
+        seq(optional(" "), $.variable),
       )),
     ),
 
@@ -332,10 +319,7 @@ module.exports = grammar({
         /[ ][^\s$@&]/,
         /[^\s$@&]/,
         /[$@&][^{]/,
-        seq(optional(" "), $.scalar_variable),
-        seq(optional(" "), $.list_variable),
-        seq(optional(" "), $.dictionary_variable),
-        seq(optional(" "), $.empty_variable),
+        seq(optional(" "), $.variable),
     )))),
 
 
@@ -348,6 +332,13 @@ module.exports = grammar({
     ),
 
     variable_name: $ => /[^{}]+/,
+
+    variable: $ => choice(
+      $.scalar_variable,
+      $.list_variable,
+      $.dictionary_variable,
+      $.empty_variable,
+    ),
 
     list_variable: $ => seq("@{", optional(" "), $.variable_name, optional(" "), "}"),
     scalar_variable: $ => seq("${", optional(" "), $.variable_name, optional(" "), "}"),

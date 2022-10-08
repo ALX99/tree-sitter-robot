@@ -113,20 +113,24 @@ I Am A User Defined Keyword
           (keyword_setting
             (arguments
               (argument
-                (scalar_variable
-                  (variable_name)))
+                (variable
+                  (scalar_variable
+                    (variable_name))))
               (argument
-                (scalar_variable
-                  (variable_name)))
+                (variable
+                  (scalar_variable
+                    (variable_name))))
               (argument
-                (scalar_variable
-                  (variable_name))
+                (variable
+                  (scalar_variable
+                    (variable_name)))
                 (text))))
           (keyword_setting
             (arguments
               (argument
-                (scalar_variable
-                  (variable_name)))))
+                (variable
+                  (scalar_variable
+                    (variable_name))))))
           (keyword_setting
             (arguments
               (argument
@@ -189,22 +193,26 @@ Print ${ msg} to console
           (statement
             (keyword_invocation
               (keyword
-                (scalar_variable
-                  (variable_name))
-                (scalar_variable
-                  (variable_name)))))))))
+                (variable
+                  (scalar_variable
+                    (variable_name)))
+                (variable
+                  (scalar_variable
+                    (variable_name))))))))))
   (section
     (keywords_section
       (section_header)
       (keyword_definition
         (name
-          (scalar_variable
-            (variable_name)))
+          (variable
+            (scalar_variable
+              (variable_name))))
         (body
           (statement
             (keyword_invocation
               (keyword)
               (arguments
                 (argument
-                  (scalar_variable
-                    (variable_name)))))))))))
+                  (variable
+                    (scalar_variable
+                      (variable_name))))))))))))

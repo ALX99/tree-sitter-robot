@@ -8,23 +8,11 @@
       "required": true,
       "types": [
         {
-          "type": "dictionary_variable",
-          "named": true
-        },
-        {
-          "type": "empty_variable",
-          "named": true
-        },
-        {
-          "type": "list_variable",
-          "named": true
-        },
-        {
-          "type": "scalar_variable",
-          "named": true
-        },
-        {
           "type": "text",
+          "named": true
+        },
+        {
+          "type": "variable",
           "named": true
         }
       ]
@@ -130,19 +118,7 @@
       "required": false,
       "types": [
         {
-          "type": "dictionary_variable",
-          "named": true
-        },
-        {
-          "type": "empty_variable",
-          "named": true
-        },
-        {
-          "type": "list_variable",
-          "named": true
-        },
-        {
-          "type": "scalar_variable",
+          "type": "variable",
           "named": true
         }
       ]
@@ -248,19 +224,7 @@
       "required": false,
       "types": [
         {
-          "type": "dictionary_variable",
-          "named": true
-        },
-        {
-          "type": "empty_variable",
-          "named": true
-        },
-        {
-          "type": "list_variable",
-          "named": true
-        },
-        {
-          "type": "scalar_variable",
+          "type": "variable",
           "named": true
         }
       ]
@@ -467,6 +431,21 @@
     "children": {
       "multiple": true,
       "required": false,
+      "types": [
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
       "types": [
         {
           "type": "dictionary_variable",
