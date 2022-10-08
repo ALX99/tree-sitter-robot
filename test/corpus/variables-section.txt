@@ -119,6 +119,10 @@ ${first} =  This is a very interesting
 ...         line
 @{second} =    And this is a
 ...         list with three  items
+${STRING}          This is a long string. It has multiple sentences. It does not have newlines.
+${MULTILINE}       This is a long multiline string.\nThis is the second line.\nThis is the third and the last line.
+@{LIST}            this     list     is    quite    long     and    items in it can also be long
+&{DICT}            first=This value is pretty long.    second=This value is even longer. It has two sentences.
 
 --------------------------------------------------------------------------------
 
@@ -145,4 +149,38 @@ ${first} =  This is a very interesting
             (argument
               (text))
             (argument
-              (text))))))))
+              (text)))))
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text))))
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text))))
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text))
+          (argument
+            (text))
+          (argument
+            (text))
+          (argument
+            (text))
+          (argument
+            (text))
+          (argument
+            (text))
+          (argument
+            (text))))
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text))
+          (argument
+            (text)))))))

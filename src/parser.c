@@ -2457,8 +2457,6 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '*') ADVANCE(54);
       if (lookahead == '.') ADVANCE(84);
       if (lookahead == '}') ADVANCE(349);
-      if (lookahead == '$' ||
-          lookahead == '@') ADVANCE(98);
       if (lookahead == 'D' ||
           lookahead == 'd') ADVANCE(145);
       if (lookahead == 'F' ||
@@ -2475,6 +2473,9 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == 't') ADVANCE(107);
       if (lookahead == 'V' ||
           lookahead == 'v') ADVANCE(105);
+      if (lookahead == '$' ||
+          lookahead == '&' ||
+          lookahead == '@') ADVANCE(98);
       END_STATE();
     case 311:
       if (eof) ADVANCE(318);

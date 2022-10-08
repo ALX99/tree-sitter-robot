@@ -115,7 +115,7 @@ module.exports = grammar({
       )),
     ),
     variable_definition: $ => seq(
-      seq(/[$@]\{/, $.variable_name, "}"),
+      seq(/[$&@]\{/, $.variable_name, "}"),
       optional(choice("=", " =")),
       $._separator,
       $.arguments,
