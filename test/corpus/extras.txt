@@ -82,3 +82,65 @@ This is a task
             (arguments
               (argument
                 (text_chunk)))))))))
+
+================================================================================
+Spaced out tasks and keywords
+================================================================================
+
+*** Tasks ***
+
+
+Spaced out task
+
+  Spaced Out Keyword
+
+
+
+*** Keywords ***
+
+
+ Spaced Out Keyword
+
+
+  Log To Console
+  ...  Many Newlines
+
+Ok
+  Log To Console    yep
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (test_case_or_task_definition
+        (name)
+        (body
+          (statement
+            (keyword_invocation
+              (keyword)))))))
+  (section
+    (keywords_section
+      (section_header)
+      (keyword_definition
+        (name)
+        (body
+          (statement
+            (keyword_invocation
+              (keyword)))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk)))))))
+      (keyword_definition
+        (name)
+        (body
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk))))))))))

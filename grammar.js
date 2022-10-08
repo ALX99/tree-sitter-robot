@@ -69,7 +69,7 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => seq(
-      optional(/\s+/), // Allows whitespace before the first section
+      repeat($._empty_line), // Allows empty lines before the first section
       repeat($.section)
     ),
 
@@ -127,6 +127,7 @@ module.exports = grammar({
       )),
     ),
     keyword_definition: $ => seq(
+      optional(" "),
       alias($.text_chunk, $.name),
       $._line_break,
       alias($.keyword_definition_body, $.body),
@@ -297,9 +298,10 @@ module.exports = grammar({
 
 
 
-    // todo variables can exist inside of these
+    // TODO variables can exist inside of these
+    // TODO they are not allowed to begin with ^\*, but they can with ^ \*
     test_case_or_task: $ => token(seq(
-      /[^ #]/, // Can't begin with whitespace or start of comment
+      /[^\s#]/, // Can't begin with whitespace or start of comment
       repeat1(choice(
         /[ ][^\s]/,
         /[^\s]/,

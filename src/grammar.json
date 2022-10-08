@@ -5,16 +5,11 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "PATTERN",
-              "value": "\\s+"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_empty_line"
+          }
         },
         {
           "type": "REPEAT",
@@ -552,6 +547,18 @@
     "keyword_definition": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": " "
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "ALIAS",
           "content": {
@@ -1790,7 +1797,7 @@
         "members": [
           {
             "type": "PATTERN",
-            "value": "[^ #]"
+            "value": "[^\\s#]"
           },
           {
             "type": "REPEAT1",
