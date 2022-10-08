@@ -24,7 +24,7 @@
           "named": true
         },
         {
-          "type": "text_chunk",
+          "type": "text",
           "named": true
         }
       ]
@@ -461,7 +461,7 @@
     }
   },
   {
-    "type": "text_chunk",
+    "type": "text",
     "named": true,
     "fields": {},
     "children": {

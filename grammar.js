@@ -283,7 +283,7 @@ module.exports = grammar({
 
     argument: $ => seq(
       choice(
-        $.text_chunk,
+        $.text,
         $.scalar_variable,
         $.list_variable,
         $.dictionary_variable,
@@ -292,7 +292,7 @@ module.exports = grammar({
       repeat(seq(
         optional(" "),
         choice(
-          $.text_chunk,
+          $.text,
           $.scalar_variable,
           $.empty_variable,
         )
@@ -323,7 +323,7 @@ module.exports = grammar({
       )),
     ),
 
-    text_chunk: $ => prec.right(seq(
+    text: $ => prec.right(seq(
       choice(
         /[^\s$@&]/,
         /[$@&][^{]/,

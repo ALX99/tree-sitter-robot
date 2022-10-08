@@ -30,7 +30,7 @@ Test That Something Works
               (keyword)
               (arguments
                 (argument
-                  (text_chunk))))))))))
+                  (text))))))))))
 
 ================================================================================
 Simple tasks
@@ -55,7 +55,7 @@ Hello
               (keyword)
               (arguments
                 (argument
-                  (text_chunk))))))))))
+                  (text))))))))))
 
 ================================================================================
 Data driven style test cases
@@ -81,7 +81,7 @@ Empty User Name and Password      ${EMPTY}         ${EMPTY}
         (name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
             (scalar_variable
               (variable_name)))))
@@ -92,14 +92,14 @@ Empty User Name and Password      ${EMPTY}         ${EMPTY}
             (scalar_variable
               (variable_name)))
           (argument
-            (text_chunk))))
+            (text))))
       (test_case_or_task_definition
         (name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk))))
+            (text))))
       (test_case_or_task_definition
         (name)
         (arguments
@@ -158,47 +158,47 @@ Test That Something Works
           (test_case_or_task_setting
             (arguments
               (argument
-                (text_chunk))
+                (text))
               (continuation
                 (ellipses))
               (continuation
                 (ellipses)
                 (argument
-                  (text_chunk)))))
+                  (text)))))
           (test_case_or_task_setting
             (arguments
               (argument
-                (text_chunk))
+                (text))
               (argument
-                (text_chunk))))
+                (text))))
           (test_case_or_task_setting
             (arguments
               (argument
-                (text_chunk))
+                (text))
               (argument
-                (text_chunk))))
+                (text))))
           (test_case_or_task_setting
             (arguments
               (argument
-                (text_chunk))
+                (text))
               (argument
-                (text_chunk))
+                (text))
               (argument
-                (text_chunk))))
+                (text))))
           (test_case_or_task_setting
             (arguments
               (argument
-                (text_chunk))))
+                (text))))
           (test_case_or_task_setting
             (arguments
               (argument
-                (text_chunk))))
+                (text))))
           (statement
             (keyword_invocation
               (keyword)
               (arguments
                 (argument
-                  (text_chunk))))))))))
+                  (text))))))))))
 
 ================================================================================
 Simple test case with spaces
@@ -232,7 +232,7 @@ Simple test case with spaces
               (keyword)
               (arguments
                 (argument
-                  (text_chunk))))))))))
+                  (text))))))))))
 
 ================================================================================
 Test Templates with arguments on the same line
@@ -259,7 +259,7 @@ Greet a girl  eve
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))))
+            (text))))))
   (section
     (keywords_section
       (section_header)
@@ -276,7 +276,7 @@ Greet a girl  eve
               (keyword)
               (arguments
                 (argument
-                  (text_chunk
+                  (text
                     (scalar_variable
                       (variable_name)))))))))))
   (section
@@ -286,9 +286,9 @@ Greet a girl  eve
         (name)
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (test_case_or_task_definition
         (name)
         (arguments
           (argument
-            (text_chunk)))))))
+            (text)))))))

@@ -19,7 +19,7 @@ Documentation       I am just text, # not a comment   # But I am a comment
       (setting_statement
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (comment)
           (continuation
             (ellipses)
@@ -43,7 +43,7 @@ Documentation	 		   hi
       (setting_statement
         (arguments
           (argument
-            (text_chunk)))))))
+            (text)))))))
 
 ================================================================================
 Test extra data and comment after section header
@@ -81,7 +81,7 @@ This is a task
           (test_case_or_task_setting
             (arguments
               (argument
-                (text_chunk)))))))))
+                (text)))))))))
 
 ================================================================================
 Spaced out tasks and keywords
@@ -134,7 +134,7 @@ Ok
               (keyword)
               (arguments
                 (argument
-                  (text_chunk)))))))
+                  (text)))))))
       (keyword_definition
         (name)
         (body
@@ -143,4 +143,4 @@ Ok
               (keyword)
               (arguments
                 (argument
-                  (text_chunk))))))))))
+                  (text))))))))))

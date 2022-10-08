@@ -44,79 +44,79 @@ Task Timeout      5 minutes
       (setting_statement
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk)))))))
+            (text)))))))
 
 ================================================================================
 Settings with line continuations
@@ -140,26 +140,26 @@ Documentation     This is some documentation text
       (setting_statement
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))
+              (text)))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))))
+              (text)))))
       (setting_statement
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (continuation
             (ellipses))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))
+              (text)))
           (continuation
             (ellipses)
             (argument
-              (text_chunk))))))))
+              (text))))))))

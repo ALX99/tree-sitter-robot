@@ -32,30 +32,30 @@ ${Name / with $ symbols} =  I am a string!    I am another string!
         (variable_name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk))))
+            (text))))
       (variable_definition
         (variable_name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk))))
+            (text))))
       (variable_definition
         (variable_name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk))))
+            (text))))
       (variable_definition
         (variable_name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (argument
-            (text_chunk)))))))
+            (text)))))))
 
 ================================================================================
 Multi-line variable definitions
@@ -82,33 +82,33 @@ ${FOO} =    I am a very long text string
         (variable_name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))
+              (text)))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))
+              (text)))
           (continuation
             (ellipses))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))
+              (text)))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))
+              (text)))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))
+              (text)))
           (continuation
             (ellipses)
             (argument
-              (text_chunk))))))))
+              (text))))))))
 
 ================================================================================
 Several different variables
@@ -130,19 +130,19 @@ ${first} =  This is a very interesting
         (variable_name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (continuation
             (ellipses)
             (argument
-              (text_chunk)))))
+              (text)))))
       (variable_definition
         (variable_name)
         (arguments
           (argument
-            (text_chunk))
+            (text))
           (continuation
             (ellipses)
             (argument
-              (text_chunk))
+              (text))
             (argument
-              (text_chunk))))))))
+              (text))))))))

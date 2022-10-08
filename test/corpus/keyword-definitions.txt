@@ -36,17 +36,17 @@ I Am Another User Defined Keyword
               (keyword)
               (arguments
                 (argument
-                  (text_chunk))
+                  (text))
                 (continuation
                   (ellipses)
                   (argument
-                    (text_chunk))))))
+                    (text))))))
           (statement
             (keyword_invocation
               (keyword)
               (arguments
                 (argument
-                  (text_chunk)))))
+                  (text)))))
           (statement
             (keyword_invocation
               (keyword)))))
@@ -58,11 +58,11 @@ I Am Another User Defined Keyword
               (keyword)
               (arguments
                 (argument
-                  (text_chunk))
+                  (text))
                 (continuation
                   (ellipses)
                   (argument
-                    (text_chunk))))))
+                    (text))))))
           (statement
             (keyword_invocation
               (keyword))))))))
@@ -97,19 +97,19 @@ I Am A User Defined Keyword
           (keyword_setting
             (arguments
               (argument
-                (text_chunk))
+                (text))
               (continuation
                 (ellipses))
               (continuation
                 (ellipses)
                 (argument
-                  (text_chunk)))))
+                  (text)))))
           (keyword_setting
             (arguments
               (argument
-                (text_chunk))
+                (text))
               (argument
-                (text_chunk))))
+                (text))))
           (keyword_setting
             (arguments
               (argument
@@ -121,7 +121,7 @@ I Am A User Defined Keyword
               (argument
                 (scalar_variable
                   (variable_name))
-                (text_chunk))))
+                (text))))
           (keyword_setting
             (arguments
               (argument
@@ -130,21 +130,21 @@ I Am A User Defined Keyword
           (keyword_setting
             (arguments
               (argument
-                (text_chunk))
+                (text))
               (argument
-                (text_chunk))
+                (text))
               (argument
-                (text_chunk))))
+                (text))))
           (keyword_setting
             (arguments
               (argument
-                (text_chunk))))
+                (text))))
           (statement
             (keyword_invocation
               (keyword)
               (arguments
                 (argument
-                  (text_chunk))))))))))
+                  (text))))))))))
 
 ================================================================================
 Simple Keyword with embedded argument
@@ -171,12 +171,12 @@ Print ${ msg} to console
         (variable_name)
         (arguments
           (argument
-            (text_chunk))))
+            (text))))
       (variable_definition
         (variable_name)
         (arguments
           (argument
-            (text_chunk))))))
+            (text))))))
   (section
     (test_cases_or_tasks_section
       (section_header)
