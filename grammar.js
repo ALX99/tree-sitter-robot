@@ -218,6 +218,7 @@ module.exports = grammar({
       $._separator,   // The initial indentation
       choice(
         $.variable_assignment,
+        $.return_statement,
         $.keyword_invocation,
       ),
     ),
@@ -320,6 +321,15 @@ module.exports = grammar({
         ),
       )),
     )),
+
+
+    return_statement: $ => seq(
+      'RETURN',
+      choice(
+        seq($._separator, $.arguments),
+        $._line_break,
+      ),
+    ),
 
     variable_name: $ => /[^{}]+/,
 

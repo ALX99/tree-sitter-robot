@@ -206,3 +206,107 @@ Test Keyword
               (arguments
                 (argument
                   (text_chunk))))))))))
+
+================================================================================
+Simple RETURN statements
+================================================================================
+
+*** Test Cases ***
+Test printing
+  Print    Hello
+  Print And Return
+  ...   Hello
+
+
+*** Keywords ***
+Print
+  [Arguments]  ${msg}
+  Log To Console    ${msg}
+  RETURN
+  Log To Console    This won't be logged
+
+Print And Return
+  [Arguments]  ${msg}
+  Log To Console    ${msg}
+  RETURN  "${msg}"
+  Log To Console    This won't be logged
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (test_case_or_task_definition
+        (name)
+        (body
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk)))))
+          (statement
+            (keyword_invocation
+              (keyword)))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk)))))))))
+  (section
+    (keywords_section
+      (section_header)
+      (keyword_definition
+        (name)
+        (body
+          (keyword_setting
+            (arguments
+              (argument
+                (scalar_variable
+                  (variable_name)))))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (scalar_variable
+                    (variable_name))))))
+          (statement
+            (return_statement))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk)))))))
+      (keyword_definition
+        (name)
+        (body
+          (keyword_setting
+            (arguments
+              (argument
+                (scalar_variable
+                  (variable_name)))))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (scalar_variable
+                    (variable_name))))))
+          (statement
+            (return_statement
+              (arguments
+                (argument
+                  (text_chunk)
+                  (scalar_variable
+                    (variable_name))
+                  (text_chunk)))))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (text_chunk))))))))))
