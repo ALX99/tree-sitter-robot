@@ -287,17 +287,17 @@ module.exports = grammar({
         $.scalar_variable,
         $.list_variable,
         $.dictionary_variable,
+        $.empty_variable,
       ),
       repeat(seq(
         optional(" "),
         choice(
           $.text_chunk,
           $.scalar_variable,
+          $.empty_variable,
         )
       ))
     ),
-
-
 
     // TODO variables can exist inside of these
     // TODO they are not allowed to begin with ^\*, but they can with ^ \*
@@ -336,6 +336,7 @@ module.exports = grammar({
     list_variable: $ => seq("@{", optional(" "), $.variable_name, optional(" "), "}"),
     scalar_variable: $ => seq("${", optional(" "), $.variable_name, optional(" "), "}"),
     dictionary_variable: $ => seq("&{", optional(" "), $.variable_name, optional(" "), "}"),
+    empty_variable: $ => seq("${", optional(" "), alias("EMPTY", $.variable_name), optional(" "), "}"),
 
     comment: $ => token(seq(optional(/[ \t]+/), "#", /[^\n]+/)),
 
