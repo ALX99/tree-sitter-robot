@@ -188,3 +188,94 @@ Test printing
                       (scalar_variable
                         (variable_name)))
                     (text)))))))))))
+
+================================================================================
+Test Singular Section Names
+================================================================================
+
+*** Setting ***
+Documentation      Here we have documentation for this suite.\nDocumentation is often quite long.\n\nIt can also contain multiple paragraphs.
+Default Tags       default tag 1    default tag 2    default tag 3    default tag 4    default tag 5
+
+*** Variable ***
+${STRING}          This is a long string. It has multiple sentences. It does not have newlines.
+${MULTILINE}       This is a long multiline string.\nThis is the second line.\nThis is the third and the last line.
+
+*** Task ***
+Example
+    [Tags]    you    probably    do    not    have    this    many    tags    in    real    life
+    Log To Console    ${STRING}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (settings_section
+      (section_header)
+      (setting_statement
+        (arguments
+          (argument
+            (text))))
+      (setting_statement
+        (arguments
+          (argument
+            (text))
+          (argument
+            (text))
+          (argument
+            (text))
+          (argument
+            (text))
+          (argument
+            (text))))))
+  (section
+    (variables_section
+      (section_header)
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text))))
+      (variable_definition
+        (variable_name)
+        (arguments
+          (argument
+            (text))))))
+  (section
+    (test_cases_or_tasks_section
+      (section_header)
+      (test_case_or_task_definition
+        (name)
+        (body
+          (test_case_or_task_setting
+            (arguments
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))
+              (argument
+                (text))))
+          (statement
+            (keyword_invocation
+              (keyword)
+              (arguments
+                (argument
+                  (variable
+                    (scalar_variable
+                      (variable_name))))))))))))

@@ -85,7 +85,10 @@ module.exports = grammar({
     //
 
     settings_section: $ => seq(
-      section_header($, "Settings"),
+      choice(
+        section_header($, "Settings"),
+        section_header($, "Setting"),
+      ),
       repeat(choice(
         $.setting_statement,
         $._empty_line,
@@ -102,7 +105,10 @@ module.exports = grammar({
     //
 
     variables_section: $ => seq(
-      section_header($, "Variables"),
+      choice(
+        section_header($, "Variables"),
+        section_header($, "Variable"),
+      ),
       repeat(choice(
         $.variable_definition,
         $._empty_line,
@@ -161,7 +167,9 @@ module.exports = grammar({
     test_cases_or_tasks_section: $ => seq(
       choice(
         section_header($, "Test Cases"),
+        section_header($, "Test Case"),
         section_header($, "Tasks"),
+        section_header($, "Task"),
       ),
       repeat(choice(
         $.test_case_or_task_definition,
